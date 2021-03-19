@@ -20,20 +20,18 @@
 ==================================================*/
 
 /* color */
-$black: #231815;
+$black: #363636;
 $main-color: #e8884c;
 $sub-color: #c8e4ff;
 
 /* font */
+$NotoSans: 'Noto Sans JP', sans-serif;
+$Roboto: 'Roboto', sans-serif;
 
 /* z-index */
 $z-header: 20;
 $z-header-menu: 18;
 $z-cover: 15;
-$z-slider-arrow: 5;
-
-/* other var */
-$transition: all .3s ease;
 
 /* development */
 img:not([alt]){
@@ -72,13 +70,6 @@ body {
 %img {
     width: 100%;
     height: auto;
-}
-%hover {
-    opacity: 1;
-    transition: $transition;
-    &:hover {
-        opacity: .7;
-    }
 }
 
 /*==================================================
