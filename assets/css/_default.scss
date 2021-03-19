@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "_general";
+
+/*==================================================*/
+/* 前提css */
+/*==================================================*/
+
+a,article,blockquote,body,caption,dd,div,dl,dt,footer,h1,h2,h3,h4,h5,h6,header,html,iframe,img,li,nav,ol,p,pre,section,small,span,strong,table,td,th,tr,ul,figure{background:0;border:0;font-size:100%;line-height:1;margin:0;outline:0;padding:0;vertical-align:bottom}a,small,span,strong{vertical-align:baseline}article,footer,header,nav,section{display:block}li{list-style:none}table{border-collapse:collapse;border-spacing:0}address,th{font-style:normal}:focus,a:focus{outline:0}br{letter-spacing:normal}
+textarea {resize: none;}
+a{text-decoration: none;}
+
+main img{height:auto;width:100%;}
+
+/*==================================================*/
+/* レスポンシブ用css */
+/*==================================================*/
+.pc{
+  display: block;
+  &.inline{
+    display: inline;
+  }
+  &.flex{
+    display: flex;
+  }
+}
+.sp{
+  display: none;
+  &.inline{
+    display: none;
+  }
+  &.flex{
+    display: none;
+  }
+}
+@include pad{
+  .pc{
+    display: none;
+    &.inline{
+      display: none;
+    }
+    &.flex{
+      display: none;
+    }
+  }
+  .sp{
+    display: block;
+    &.inline{
+      display: inline;
+    }
+    &.flex{
+      display: flex;
+    }
+  }
+}

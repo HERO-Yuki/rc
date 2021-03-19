@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+//==================================================
+// 便利なものたち
+//==================================================
+
+// ブレイクポイント
+$pc_w: 1920; // pc画面幅
+$laptop_w: 1280;
+$padL_w: 1024; // 大きいタブレット画面幅
+$pad_w: 768; // 普通のタブレット画面幅
+$sp_w: 480; // スマホ画面幅
+
+@mixin laptop{ // ipadPro基準
+  @media (max-width: ($laptop_w*1px)){
+    @content;
+  }
+}
+
+@mixin padL{ // ipadPro基準
+  @media (max-width: ($padL_w*1px)){
+    @content;
+  }
+}
+@mixin pad{ // ipad基準
+  @media (max-width: $pad_w*1px){
+    @content;
+  }
+}
+@mixin sp{ // スマホ 
+  @media (max-width: ($sp_w*1px)){
+    @content;
+  }
+}
+
+// IE9～11に適用(CSSハック)
+@mixin ie{
+  @media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+        .selector {
+            property: value;
+        }
+    /* IE向けのCSS～START */
+    @content;
+    /* IE向けのCSS～END */
+  }
+}
+
+// vw換算用
+$p: ((1 / $pc_w)*100vw);
+//$p: 1px;
+$padL: ((1 / $padL_w)*100vw); 
+$pad: ((1 / $pad_w)*100vw); 
+$sp: ((1 / $sp_w)*100vw);
+
+@mixin all_pc($property, $value) {
+		#{$property}: $value * $p;
+	@include laptop {
+		#{$property}: ( $value * $laptop_w / $pc_w ) * 1px;
+	}
+}
+
+@function vw($size, $viewport:$pc_w){
+  @return $size * ((1 / $viewport)*100vw);
+}
+
+@function vw_pc($size){
+  @return $size * $p;
+}
+
+@function lt($size){
+  @return ( $size * $laptop_w / $pc_w ) * 1px;
+}
+
+@function vw_padL($size){
+  @return $size * $padL;
+}
+
+@function vw_pad($size, $viewport:$pad_w){
+  @return $size * $pad;
+}
+
+@function vw_sp($size, $viewport:$sp_w){
+  @return $size * $sp;
+}

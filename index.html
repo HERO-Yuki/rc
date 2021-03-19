@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns#">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+    
+<!--<meta property="og:title" content="サイトタイトル" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="webサイトのURL" />
+<meta property="og:image" content="og画像(facebook)" />
+<meta name="twitter:image" content="og画像(twitter)" />
+<meta property="og:site_name" content="サイトタイトル" />
+<meta name="keywords" content="キーワード">
+<meta name="description" content="ディスクリプション">-->
+    
+<title>サイトタイトル</title>
+    
+<!-- slickスライダー -->
+    <!--<link href="./assets/css/slick.css" rel="stylesheet" type="text/css">-->
+    <!--<link href="./assets/css/slick-theme.css" rel="stylesheet" type="text/css">-->
+<!-- animation -->
+    <!--<link href="./assets/css/animate.css" rel="stylesheet" type="text/css">-->
+<!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<!-- CSS main -->
+    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body id="top" class="body">
+    <div id="body-wrapper">
+        
+        <header id="header" class="header">
+            <h1 class="header__logo-wrapper">
+                <img class="header__logo" src="./assets/img/logo.svg" alt="サイトタイトル" >
+            </h1>
+            <nav class="header-nav">
+                <ul class="header-nav__wrapper">
+                    <li class="header-nav__item"><a class="header-nav__link" href="#">MENU01</a></li>
+                    <li class="header-nav__item"><a class="header-nav__link" href="#">MENU02</a></li>
+                    <li class="header-nav__item"><a class="header-nav__link" href="#">MENU03</a></li>
+                    <li class="header-nav__item"><a class="header-nav__link" href="#">MENU04</a></li>
+                </ul>
+            </nav>
+            <button type="button" id="hamburger-btn" class="hamburger-btn sp">
+                <span class="hamburger-btn__line"></span>
+                <span class="hamburger-btn__name">MENU</span>
+            </button>
+        </header>
+        
+        <div class="cover close-hamburger"></div>
+
+        <main id="main" class="main">
+            <nav class="child-menu">
+                <ul class="child-menu__parent-item-wrapper">
+                    <li class="child-menu__parent-item child-menu__parent-item--has-child"><a href="#" class="child-menu__link">Menu01 ▼</a>
+                        <ul class="child-menu__child-item-wrapper">
+                            <li class="child-menu__child-item"><a href="#" class="child-menu__link">Sub-menu01</a></li>
+                            <li class="child-menu__child-item"><a href="#" class="child-menu__link">Sub-menu02</a></li>
+                            <li class="child-menu__child-item"><a href="#" class="child-menu__link">Sub-menu03</a></li>
+                        </ul>
+                    </li>
+                    <li class="child-menu__parent-item"><a href="#" class="child-menu__link">Menu02</a></li>
+                    <li class="child-menu__parent-item"><a href="#" class="child-menu__link">Menu03</a></li>
+                </ul>
+            </nav>
+        </main>
+        <div id="gototop" class="gototop">
+            <a class="gototop__link" href="#top">
+                <i class="fas fa-chevron-up gototop__icon"></i>
+            </a>
+        </div>
+        <!-- /#gototop -->
+
+        <footer id="footer" class="footer">
+            <small class="footer__copyright">© 2020 サイトタイトル. All rights reserved.</small>
+        </footer>
+        
+    </div><!-- /#body-wrapper -->
+
+<!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- slickスライダー -->
+    <!--<script src="./assets/js/slick.min.js" type="text/javascript"></script>-->
+
+<!-- inVアニメーション -->
+    <!--<script src="./assets/js/inview.js" type="text/javascript"></script>-->
+    <!--<script src="./assets/js/jquery.inview.min.js" type="text/javascript"></script>-->
+<!-- js main -->
+    <script src="./assets/js/common.js" type="text/javascript"></script>
+</body>   
+</html>
