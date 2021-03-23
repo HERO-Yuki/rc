@@ -14,14 +14,14 @@ $(document).on('click', '#hamburger-btn' , function() {
     $('#hamburger-btn').addClass('close-hamburger');
     $('#hamburger-btn').addClass('active');
     $('.header-nav').addClass('active');
-    $('.cover').addClass('active');
+    $('.cover-hamburger').addClass('active');
     $('body').css('overflow', 'hidden');
 });
 $(document).on('click', '.close-hamburger' , function() {
     $('#hamburger-btn').removeClass('active');
     $('#hamburger-btn').removeClass('close-hamburger');
     $('.header-nav').removeClass('active');
-    $('.cover').removeClass('active');
+    $('.cover-hamburger').removeClass('active');
     $('body').css('overflow', 'auto');
 });
 
