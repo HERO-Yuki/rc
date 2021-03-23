@@ -57,9 +57,17 @@ body {
         display: none!important;
     }
 }
+
+.pad {
+	display: none!important;
+    @include pad {
+        display: inherit!important;
+    }
+}
+
 .sp {
     display: none!important;
-    @include pad {
+    @include sp {
         display: inherit!important;
     }
 }
@@ -99,7 +107,7 @@ body {
 	}
     &__logo-wrapper {
         display: block;
-        width: 200px;
+        width: 392px;
         height: auto;
     }
     &__logo {
@@ -133,13 +141,10 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-		&:hover {
-			margin-top: 1px;
-			opacity: .6;
-		}
     }
     
     @include pad {
+		padding: 0;
         position: absolute;
         left: 0;
         top: -1000px;
@@ -147,7 +152,7 @@ body {
         //z-index: $z-header-menu;
         z-index: -1;
         &.active {
-            top: 60px;
+            top: 100px;
         }
         &__wrapper {
             flex-direction: column;
@@ -155,26 +160,29 @@ body {
         }
         &__item {
             width: 100%;
-            &::before, &:not(:first-child)::before {
+            &:not(:first-child)::before {
                 content: "";
-                width: 95%;
+                width: 80%;
                 height: 1px;
-                background: #fff;
+                background: $black;
                 position: absolute;
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
             }
+			&:hover {
+				border-bottom: none;
+			}
         }
         &__link {
             padding: 20px 0;
             width: 100%;
             box-sizing: border-box;
-            background: $main-color;
+            background: #fff;
+			color: $black;
             &:hover { 
-                background: $sub-color;
-                opacity: 1;
-                color: $black;
+                background: $black;
+				color: #fff;
             }
         }
         
@@ -199,7 +207,7 @@ body {
         display: block;
         width: 60%;
         height: 3px;
-        background: $main-color;
+        background: $black;
         border-radius: 3px;
         margin-top: 12px;
         position: relative;
@@ -208,7 +216,7 @@ body {
             display: block;
             width: 100%;
             height: 3px;
-            background: $main-color;
+            background: $black;
             border-radius: 3px;
             position: absolute;
             left: 0;
@@ -238,11 +246,11 @@ body {
     }
 }
 
-.cover {
+.cover-hamburger {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, .5);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: $z-cover;
@@ -279,6 +287,39 @@ body {
 			margin-top: 30px;
 		}
 	}
+	
+	@include pad {
+		&__mainCopy {
+			font-size: 30px;
+		}
+		&__copyBlock {
+			display: inline-block;
+			padding: 10px 16px;
+			background: $orange;
+			&:not(:first-child) {
+				margin-top: 30px;
+			}
+		}
+	}
+	
+	@include sp {
+		&__mainCopy {
+			font-size: vw_sp(30);
+		}
+		&__copyBlock {
+			background: transparent;
+			text-align: center;
+			padding: 0;
+			&--sp {
+				display: inline-block;
+				padding: 10px 16px;
+				background: $orange;
+				&:not(:first-child) {
+					margin-top: 30px;
+				}
+			}
+		}
+	}
 }
 
 .copy {
@@ -291,6 +332,19 @@ body {
 		font-size: 36px;
 		color: #fff;
 		text-align: center;
+	}
+	
+	@include pad {
+		&__subCopy {
+			font-size: 26px;
+		}
+	}
+	
+	@include sp {
+		&__subCopy {
+			font-size: vw_sp(26);
+			line-height: 1.4;
+		}
 	}
 }
 
@@ -355,6 +409,10 @@ body {
 			}
 			&--column2 {
 				width: 100%;
+				&:not(:first-child) {
+					margin-left: 0;
+					margin-top: 30px;
+				}
 			}
 			&__text-wrapper {
 				padding: 18px 18px 26px;
@@ -453,6 +511,22 @@ body {
 	&__pic {
 		@extend %img;
 	}
+	
+	@include pad {
+		&__flexWrapper {
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+		&__text {
+			width: 100%;
+			margin-top: 12px;
+		}
+		&__picWrapper {
+			width: 50%;
+			height: auto;
+		}
+	}
 }
 
 .modals {
@@ -501,6 +575,28 @@ body {
 	&__right {
 		width: 80%;
 	}
+	.mail-address {
+		text-decoration: underline;
+	}
+	
+	@include sp {
+		background: #fff;
+		padding: 14px 22px;
+		&__row {
+			flex-direction: column;
+			padding: 0;
+		}
+		&__left {
+			width: 100%;
+			text-decoration: underline;
+			padding-bottom: 0;
+		}
+		&__right {
+			width: 100%;
+			padding-left: 32px;
+			box-sizing: border-box;
+		}
+	}
 }
 
 .recruit {
@@ -520,6 +616,13 @@ body {
 	padding-bottom: 50px;
 	.hh-orangeLine {
 		margin-bottom: 44px;
+	}
+	@include sp {
+		.text {
+			display: block;
+			width: 95%;
+			margin: 0 auto;
+		}
 	}
 }
 
@@ -555,6 +658,21 @@ body {
 			align-items: center;
 			line-height: 1.6;
 			width: 320px;
+			&--center {
+				text-align: center;
+			}
+		}
+	}
+	
+	@include sp {
+		.document {
+			width: 90%;
+			&__num {
+				width: 20%;
+			}
+			&__text {
+				width: 80%;
+			}
 		}
 	}
 }
@@ -570,6 +688,7 @@ body {
 .access {
 	iframe {
 		width: 100%!important;
+		margin-top: 8px;
 	}
 }
 
@@ -601,6 +720,11 @@ body {
 			top: 52%;
 			transform: translateY(-50%);		
 		}
+	}
+	
+	@include pad {
+		width: 90%;
+		font-size: vw_pad(28);
 	}
 }
 /*==================================================
