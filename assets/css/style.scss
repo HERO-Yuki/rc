@@ -21,6 +21,7 @@
 
 /* color */
 $black: #363636;
+$orange: #f87108;
 $main-color: #e8884c;
 $sub-color: #c8e4ff;
 
@@ -43,6 +44,8 @@ body {
     color: $black;
     font-size: 16px;
     box-sizing: border-box;
+	font-family: $NotoSans;
+	font-weight: Regular;
 }
 
 #body-wrapper {
@@ -77,18 +80,25 @@ body {
 ==================================================*/
 
 .header {
-    height: 60px;
-    background: $main-color;
+    height: 100px;
+    background: #fff;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 1em;
-    color: #fff;
+    color: $black;
     z-index: $z-header;
+	box-sizing: border-box;
+	border-bottom:3px solid $orange;
+	&__wrapper {
+		max-width: 1200px;
+		height: 100%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
     &__logo-wrapper {
         display: block;
         width: 200px;
@@ -101,36 +111,34 @@ body {
 
 .header-nav {
     height: 100%;
+	max-width: 1200px;
+	padding: 0 15px;
     &__wrapper {
         display: flex;
         height: 100%;
+		margin-right: -15px;
     }
     &__item {
         position: relative;
         height: 100%;
-        &:not(:first-child)::before {
-            content: "";
-            width: 1px;
-            height: 1em;
-            background: #fff;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        &:last-child .header-nav__link {
-            padding-right: 0;
-        }
+		&:hover {
+			box-sizing: border-box;
+			border-bottom: 3px solid $orange;
+		}
     }
     &__link {
         @extend %link;
-        @extend %hover;
-        color: #fff;
+        color: $black;
         height: 100%;
-        padding: 0 .7em;
+        padding: 0 15px;
+		font-size: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
+		&:hover {
+			margin-top: 1px;
+			opacity: .6;
+		}
     }
     
     @include pad {
@@ -140,7 +148,6 @@ body {
         width: 100%;
         //z-index: $z-header-menu;
         z-index: -1;
-        transition: $transition;
         &.active {
             top: 60px;
         }
@@ -198,7 +205,6 @@ body {
         border-radius: 3px;
         margin-top: 12px;
         position: relative;
-        transition: $transition;
         &::before, &::after {
             content: "";
             display: block;
@@ -208,7 +214,6 @@ body {
             border-radius: 3px;
             position: absolute;
             left: 0;
-            transition: $transition;
         }
         &::before {
             bottom: 8px;
@@ -243,7 +248,6 @@ body {
     top: 0;
     left: 0;
     z-index: $z-cover;
-    transition: $transition;
     display: none;
     &.active {
         display: block;
@@ -254,92 +258,137 @@ body {
  3. main
 ==================================================*/
 
-main {
-    padding: 20px; //後で消す
-    height: 150vh;//後で消す
-    %item {
-        height: 64px;
-    }
-    .child-menu{
-        position: relative;
-        width: 100%;
-        &__parent-item-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start
-        }
-        &__parent-item {
-            @extend %item;
-            width: calc( 100% / 3 ); //メニューの数に合わせて調整
-            display: inline-block;
-            position: relative;
-            background: $black;
-            transition: $transition;
-            &:hover { background: #777; }
-            &:not(:first-child)::before {
-                content: "";
-                width: 1px;
-                height: 60%;
-                background: #fff;
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            &--has-child:hover { background: $main-color; }
-            &--has-child:hover ul {
-                display: block;
-                animation: show .3s linear 0s;
-            }
-        }
-        &__child-item-wrapper {
-            width: 100%;
-            position: absolute;
-            top: 64px;
-            left: 0;
-            display: none;
-            transition: $transition;
-        }
-        &__child-item {
-            @extend %item;
-            background: $black;
-            position: relative;
-            &:hover { background: $main-color; }
-            &::before {
-                content: "";
-                height: 1px;
-                width: 80%;
-                background: #fff;
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-        &__link {
-            @extend %link;
-            color: #fff;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-    }
+.mv {
+	background: url("../img/mv.jpg") no-repeat center / cover;
+	width: 100%;
+	height: 800px;
+	&__mainCopy {
+		display: block;
+		height: 100%;
+		font-size: 46px;
+		font-weight: bold;
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__copyBlock {
+		display: inline-block;
+		padding: 14px 22px;
+		background: $orange;
+		&:not(:first-child) {
+			margin-top: 30px;
+		}
+	}
 }
 
+.copy {
+	background: $black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 156px;
+	&__subCopy {
+		font-size: 36px;
+		color: #fff;
+		text-align: center;
+	}
+}
+
+.inner {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: -15px;
+	padding: 0 15px;
+	box-sizing: border-box;
+	&--1200 {
+		max-width: 1200px;
+	}
+}
+
+.cards {
+	display: flex;
+	max-width: 1200px;
+	.card {
+		background: #fff;
+		&--column3 {
+			width: calc( (100% / 3) - (2% * 2) );
+			margin-top: 15px;
+			margin-left: 2%;
+		}
+		&--column2 {
+			
+		}
+		&__picWrapper {
+			width: 100%;
+			height: auto;
+		}
+		&__pic {
+			@extend %img;
+		}
+		&__text-wrapper {
+			padding: 18px 18px 26px;
+		}
+		&__text {
+			margin-top: 26px;
+		}
+	}
+}
+
+.hh-orangeLine {
+	font-size: 24px;
+	text-align: center;
+	padding-bottom: 26px;
+	position: relative;
+	&::after {
+		content: "";
+		width: 92px;
+		height: 2px;
+		background: $orange;
+		display: block;
+		position: absolute;
+		bottom: -2px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+.text {
+	font-size: 16px;
+	line-height: 1.6;
+}
+.works {
+	background: #f5f5f5;
+	padding-top: 52px;
+	padding-bottom: 48px;
+}
+
+hh2 {
+	&--black {
+		color: $black;
+	}
+	&--white {
+		color: #fff;
+	}
+}
+
+.pictures {
+	.cards {
+		flex-wrap: wrap;
+		.card {
+		}
+	}
+}
 /*==================================================
  4. footer
 ==================================================*/
 
-.footer {
+.global-footer {
     width: 100%;
     height: 40px;
     background: $main-color;
     display: flex;
     align-items: center;
-    position: absolute;
-    bottom: 0;
     &__copyright {
         color: #fff;
         display: block;
@@ -363,8 +412,6 @@ main {
         border: 1px solid $black;
         justify-content: center;
         align-items: center;
-        transition: $transition;
-        //animation: hide .3s linear 0s;
         &:hover {
             background: $sub-color;
         } 

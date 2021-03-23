@@ -17,7 +17,7 @@
     
 <!-- googleフォント -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Roboto&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto&display=swap" rel="stylesheet">  
 <!-- Font Awesome -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <!-- CSS main -->
@@ -27,22 +27,24 @@
     <div id="body-wrapper">
         
         <header id="header" class="header">
-            <h1 class="header__logo-wrapper">
-                <img class="header__logo" src="./assets/img/logo.png" alt="株式会社アール・カンパニー ロゴ" >
-            </h1>
-            <nav class="header-nav">
-                <ul class="header-nav__wrapper">
-                    <li class="header-nav__item"><a class="header-nav__link" href="#works">業務内容</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="#pictures">施工風景</a></li>
-                    <li class="header-nav__item"><a class="header-nav__link" href="#message">代表挨拶</a></li>
-                    <li class="header-nav__item"><a class="header-nav__link" href="#about">会社概要</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="#recruit">採用情報</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="#access">アクセス</a></li>
-                </ul>
-            </nav>
-            <button type="button" id="hamburger-btn" class="hamburger-btn sp">
-                <span class="hamburger-btn__line"></span>
-            </button>
+			<div class="header__wrapper">
+				<h1 class="header__logo-wrapper">
+					<img class="header__logo" src="./assets/img/logo.png" alt="株式会社アール・カンパニー ロゴ" >
+				</h1>
+				<nav class="header-nav">
+					<ul class="header-nav__wrapper">
+						<li class="header-nav__item"><a class="header-nav__link" href="#works">業務内容</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="#pictures">施工風景</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="#message">代表挨拶</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="#about">会社概要</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="#recruit">採用情報</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="#access">アクセス</a></li>
+					</ul>
+				</nav>
+				<button type="button" id="hamburger-btn" class="hamburger-btn sp">
+					<span class="hamburger-btn__line"></span>
+				</button>
+			</div>
         </header>
         
         <div class="cover-hamburger close-hamburger"></div>
@@ -52,12 +54,14 @@
 			<section id="mv" class="mv">
 				<p class="mv__mainCopy">
 					<span class="mv__copyBlock">
-						<span class="mv__copyBlock--sp">電気工事のプロフェッショナルとして</span>
-						<span class="mv__copyBlock--sp">電気工事のプロフェッショナルとして</span>
-					</span>
-					<span class="mv__copyBlock">
-						<span class="mv__copyBlock--sp">電気設備に関する</span>
-						<span class="mv__copyBlock--sp">様々なご依頼にお応えします</span>
+						<span class="mv__copyBlock--sp">電気工事の</span
+						><span class="mv__copyBlock--sp">プロフェッショナルとして</span
+						>
+					</span
+					><span class="mv__copyBlock">
+						<span class="mv__copyBlock--sp">電気設備に関する</span
+						><span class="mv__copyBlock--sp">様々なご依頼にお応えします</span
+						>
 					</span>
 				</p>
 			</section>
@@ -65,66 +69,70 @@
 				<p class="copy__subCopy">電気工事のことなら<br class="sp">アール・カンパニーにお任せください</p>
 			</section>
 			<section id="works" class="works">
-				<div class="cards">
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/workPic_01.jpg" class="card__pic" alt="電気設備の写真"></figure>
-						<div class="card__text-wrapper">
-							<h2 class="hh-orangeLine">電気設備</h2>
-							<p class="text card__text">
-								宮城県内の施工現場であればどこで伺います。電線・ケーブルの配線や配管、ボックスの設置、機器・設備や照明の設置など施工図に従って正確に工事しますのでお任せください。
-							</p>
+				<div class="inner inner--1200">
+					<div class="cards cards--column3">
+						<div class="card card--column3">
+							<figure class="card__picWrapper"><img src="./assets/img/workPic_01.jpg" class="card__pic" alt="電気設備の写真"></figure>
+							<div class="card__text-wrapper">
+								<h2 class="hh-orangeLine">電気設備</h2>
+								<p class="text card__text">
+									宮城県内の施工現場であればどこで伺います。電線・ケーブルの配線や配管、ボックスの設置、機器・設備や照明の設置など施工図に従って正確に工事しますのでお任せください。
+								</p>
+							</div>
 						</div>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/workPic_02.jpg" class="card__pic" alt="設計の写真"></figure>
-						<div class="card__text-wrapper">
-							<h2 class="hh-orangeLine">設計</h2>
-							<p class="text card__text">
-								建物の設計図書から、電気設備の設置場所や配線ルートをご提案します。どのような電気設備が必要かだけではなく、技術的・予算的な面も考慮して設計していきます。
-							</p>
+						<div class="card card--column3">
+							<figure class="card__picWrapper"><img src="./assets/img/workPic_02.jpg" class="card__pic" alt="設計の写真"></figure>
+							<div class="card__text-wrapper">
+								<h2 class="hh-orangeLine">設計</h2>
+								<p class="text card__text">
+									建物の設計図書から、電気設備の設置場所や配線ルートをご提案します。どのような電気設備が必要かだけではなく、技術的・予算的な面も考慮して設計していきます。
+								</p>
+							</div>
 						</div>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/workPic_03.jpg" class="card__pic" alt="その他 各種施工の写真"></figure>
-						<div class="card__text-wrapper">
-							<h2 class="hh-orangeLine">その他 各種施工</h2>
-							<p class="text card__text">
-								一般住宅、ビル、商業施設など問わず電気工事でお困りごとやご依頼があればまずはご相談ください。<br>
-								各種点検や定期的なメンテナンスなども承ります。
-							</p>
+						<div class="card card--column3">
+							<figure class="card__picWrapper"><img src="./assets/img/workPic_03.jpg" class="card__pic" alt="その他 各種施工の写真"></figure>
+							<div class="card__text-wrapper">
+								<h2 class="hh-orangeLine">その他 各種施工</h2>
+								<p class="text card__text">
+									一般住宅、ビル、商業施設など問わず電気工事でお困りごとやご依頼があればまずはご相談ください。<br>
+									各種点検や定期的なメンテナンスなども承ります。
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section id="pictures" class="pictures">
 				<h2 class="hh2 hh2--black">施工風景</h2>
-				<div class="cards">
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_01.jpg" class="card__pic" alt="施工の様子の写真"></figure>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_02.jpg" class="card__pic" alt="施工の様子の写真"></figure>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_03.jpg" class="card__pic" alt="施工の様子の写真"></figure>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_04.jpg" class="card__pic" alt="施工の様子の写真"></figure>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_05.jpg" class="card__pic" alt="施工の様子の写真"></figure>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_06.jpg" class="card__pic" alt="施工の様子の写真"></figure>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_07.jpg" class="card__pic" alt="施工の様子の写真"></figure>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_08.jpg" class="card__pic" alt="施工の様子の写真"></figure>
-					</div>
-					<div class="card card--column3">
-						<figure class="card__picWrapper"><img src="./assets/img/picPic_09.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+				<div class="inner inner--1200">
+					<div class="cards">
+						<div class="card card--column3" data-id="1">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_01.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
+						<div class="card card--column3" data-id="2">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_02.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
+						<div class="card card--column3" data-id="3">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_03.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
+						<div class="card card--column3" data-id="4">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_04.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
+						<div class="card card--column3" data-id="5">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_05.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
+						<div class="card card--column3" data-id="6">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_06.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
+						<div class="card card--column3" data-id="7">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_07.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
+						<div class="card card--column3" data-id="8">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_08.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
+						<div class="card card--column3" data-id="9">
+							<figure class="card__picWrapper"><img src="./assets/img/picPic_09.jpg" class="card__pic" alt="施工の様子の写真"></figure>
+						</div>
 					</div>
 				</div>
 				<div class="modals">
@@ -345,20 +353,14 @@
         </div>
         <!-- /#gototop -->
 
-        <footer id="footer" class="footer">
-            <small class="footer__copyright">&copy; 2021 R.Company co.,ltd All rights reserved.</small>
+        <footer id="footer" class="global-footer">
+            <small class="global-footer__copyright">&copy; 2021 R.Company co.,ltd All rights reserved.</small>
         </footer>
         
     </div><!-- /#body-wrapper -->
 
 <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- slickスライダー -->
-    <!--<script src="./assets/js/slick.min.js" type="text/javascript"></script>-->
-
-<!-- inVアニメーション -->
-    <!--<script src="./assets/js/inview.js" type="text/javascript"></script>-->
-    <!--<script src="./assets/js/jquery.inview.min.js" type="text/javascript"></script>-->
 <!-- js main -->
     <script src="./assets/js/common.js" type="text/javascript"></script>
 </body>   
