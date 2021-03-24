@@ -48,3 +48,23 @@ $(function() {
         }
     });
 });
+
+//モーダル
+$(function(){
+    // ボタンを押してモーダルを表示（#modal の display: none → block）
+    $('.modal_open').on('click',function(){
+        var id = $(this).data('id'); // data-idを取得して変数idに格納
+        var tar = ".modal" + id; // ボタンに応じたモーダルのクラスを取得
+        $(tar).fadeIn(0);
+		$('.cover-modal').fadeIn(0);
+        return false;
+    });
+    
+    // 黒背景か戻るボタンを押して
+    // モーダルを非表示（#modal の display: block → none）
+    $('.close-modal').on('click',function(){
+        $('.modal').fadeOut(0);
+		$('.cover-modal').fadeOut(0);
+        return false;
+    });
+});
