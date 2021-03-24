@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+# httpからの通信を、httpsにリダイレクト（www有り無し）
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*$) https://example.com/$1 [R=301,L]
+</IfModule>
