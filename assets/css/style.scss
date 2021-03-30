@@ -107,12 +107,19 @@ body {
 	}
     &__logo-wrapper {
         display: block;
-        width: 392px;
+        width: 352px;
         height: auto;
     }
     &__logo {
         @extend %img;
     }
+	
+	@include sp {
+		 height: 80px;
+		&__logo-wrapper {
+			width: 252px;
+		}
+	}
 }
 
 .header-nav {
@@ -137,7 +144,7 @@ body {
         color: $black;
         height: 100%;
         padding: 0 15px;
-		font-size: 20px;
+		font-size: 18px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -187,6 +194,12 @@ body {
         }
         
     }
+	
+	@include sp {
+		&.active {
+            top: 80px;
+        }
+	}
 }
 
 .hamburger-btn {
@@ -272,7 +285,7 @@ body {
 	&__mainCopy {
 		display: block;
 		height: 100%;
-		font-size: 46px;
+		font-size: 44px;
 		font-weight: bold;
 		color: #fff;
 		display: flex;
@@ -290,6 +303,7 @@ body {
 	}
 	
 	@include pad {
+		height: 600px;
 		&__mainCopy {
 			font-size: 30px;
 		}
@@ -333,6 +347,7 @@ body {
 		font-size: 36px;
 		color: #fff;
 		text-align: center;
+		font-weight: bold;
 	}
 	
 	@include pad {
@@ -441,6 +456,13 @@ body {
 		left: 50%;
 		transform: translateX(-50%);
 	}
+	
+	@include sp {
+		font-size: 20px;
+		&::after {
+			width: 80px;
+		}
+	}
 }
 .text {
 	font-size: 16px;
@@ -453,6 +475,21 @@ body {
 	background: #f5f5f5;
 	padding-top: 52px;
 	padding-bottom: 48px;
+	position: relative;
+	&::before {
+		content: "";
+		width: 0;
+		height: 0;
+		border-top: 16px solid transparent;
+		border-right: 16px solid transparent;
+		border-bottom: 16px solid #f5f5f5;
+		border-left: 16px solid transparent;
+		display: block;
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 .hh2 {
@@ -466,9 +503,14 @@ body {
 	&--white {
 		color: #fff;
 	}
+	
+	@include sp {
+		font-size: 26px;
+	}
 }
 
 .pictures {
+  padding-top: 52px;
 	padding-bottom: 48px;
 	.cards {
 		flex-wrap: wrap;
@@ -487,11 +529,11 @@ body {
 	padding-bottom: 48px;
 	&__flexWrapper {
 		display: flex;
-		justify-content: space-between;
-		align-items: stretch;
+		justify-content: center;
+    align-items: center;
 	}
 	&__text {
-		width: 69%;
+		width: 80%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -502,7 +544,7 @@ body {
 			display: inline-block;
 			width: 100%;
 			text-align: right;
-			margin-top: auto;
+			margin-top: 1em;
 		}
 	}
 	&__picWrapper {
@@ -599,7 +641,7 @@ body {
 		}
 		&__left {
 			width: 100%;
-			text-decoration: underline;
+			font-weight: bold;
 			padding-bottom: 0;
 		}
 		&__right {
@@ -697,6 +739,7 @@ body {
 }
 
 .access {
+  padding-top: 52px;
 	iframe {
 		width: 100%!important;
 		margin-top: 8px;
@@ -735,7 +778,10 @@ body {
 	
 	@include pad {
 		width: 90%;
-		font-size: vw_pad(28);
+		font-size: 28px;
+	}
+	@include sp {
+		font-size: 24px;
 	}
 }
 /*==================================================
@@ -778,6 +824,13 @@ body {
 		 &__link {
 			right: vw_pad(60);
 			bottom: vw_pad(60);
+		}   
+	}
+	
+	@include sp {
+		 &__link {
+			width: 40px;
+			height: 40px;
 		}   
 	}
 }
